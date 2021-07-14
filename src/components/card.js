@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 const Card = (props) => {
   const arr = props.weather();
 

@@ -1,0 +1,13 @@
+.sidebar {
+  flex-direction: column;
+
+  background: gray;
+  columns: 200px;
+  height: 1000px;
+}
+.button {
+  font-size: medium;
+}
+input {
+  size: medium;
+}

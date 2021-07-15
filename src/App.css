@@ -16,3 +16,14 @@
     transform: rotate(360deg);
   }
 }
+.card {
+  color: #ec6e4c;
+  position: absolute;
+  z-index: 5;
+  margin: 20px;
+  padding: 20px;
+}
+.sidebar {
+  position: relative;
+  z-index: 4;
+}

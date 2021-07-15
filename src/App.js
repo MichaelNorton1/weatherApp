@@ -38,10 +38,14 @@ function App() {
     <div className="App">
       <div>
         <Top></Top>
-        <Sidebar data={findCity}></Sidebar>
+        <Sidebar className="sidebar" data={findCity}>
+          {" "}
+        </Sidebar>
       </div>
-      <Card weather={temperature}></Card>
-      <div></div>
+
+      <div>
+        <Card className="card" weather={temperature}></Card>
+      </div>
     </div>
   );
 }

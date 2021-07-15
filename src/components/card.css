@@ -1,0 +1,24 @@
+.card {
+  border-radius: 10%;
+  height: 210px;
+  width: 210px;
+  display: grid;
+
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  background-color: lightblue;
+}
+.city {
+  max-width: 200px;
+  text-align: center;
+}
+img {
+  width: 50%;
+  height: auto;
+  margin: 0px;
+}
+
+.temp {
+  max-width: 200px;
+  text-align: center;
+  padding-bottom: 10px;
+}

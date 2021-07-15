@@ -1,5 +1,5 @@
 import "./App.css";
-
+import myKey from "./config.js";
 import request from "request";
 import { useState } from "react";
 import Top from "./top/top.js";
@@ -10,7 +10,9 @@ function App() {
   const findCity = async (props) => {
     const x = props.zipcode;
 
-    const url = `https://api.openweathermap.org/data/2.5/weather?zip=${x},us&units=imperial&appid=56ef537d238ede2db0841928d59d3e33`;
+    const url =
+      `https://api.openweathermap.org/data/2.5/weather?zip=${x},us&units=imperial&appid=` +
+      myKey;
 
     request(url, function (error, res, body) {
       //console.log(error);

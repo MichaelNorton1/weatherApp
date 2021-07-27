@@ -10,11 +10,12 @@ const Sidebar = (props) => {
   const submitHandler = (event) => {
     event.preventDefault();
     const zipCode = { zipcode: value };
+
     props.data(zipCode);
   };
 
   return (
-    <div className="sidebar">
+    <div className="sidebar tc ">
       <form onSubmit={submitHandler}>
         <label>
           {" "}

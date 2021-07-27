@@ -1,29 +1,11 @@
-.App {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-.card {
+/* .card {
   color: #ec6e4c;
   position: absolute;
   z-index: 5;
   margin: 20px;
   padding: 20px;
-}
-.sidebar {
+} */
+/* .sidebar {
   position: relative;
   z-index: 4;
-}
+} */

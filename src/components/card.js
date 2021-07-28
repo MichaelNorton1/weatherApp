@@ -1,9 +1,11 @@
 import "./card.css";
 const Card = (props) => {
   const arr =
-    props.weather() === "no weather to display" ? undefined : props.weather();
-  console.log(arr);
-  return arr === undefined ? (
+    props.weather() === "no weather to display"
+      ? "no weather to display"
+      : props.weather();
+
+  return arr === "no weather to display" ? (
     <div className="tc">Please enter a valid ZipCode</div>
   ) : (
     <div>

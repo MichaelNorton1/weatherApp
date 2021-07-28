@@ -20,19 +20,26 @@ function App() {
 
       request(url, function (error, res, body) {
         const x = JSON.parse(body);
-        console.log(error);
+        if (error) {
+          setWeatherState("no weather to display");
+          console.log(error);
+        }
 
         setWeatherState(x);
       });
     }
   };
+  ////// remake front end wit express
 
-  const temperature = () => {
+  const temperature = (props) => {
     if (
       weatherData !== "no weather to display" &&
       weatherData !== null &&
-      weatherData.cod !== "400"
+      weatherData.message !== "city not found" &&
+      weatherData.message !== "invalid zip code"
     ) {
+      console.log(weatherData);
+      console.log();
       const temp = weatherData.main.temp;
       const cityName = weatherData.name;
       const icon = weatherData.weather[0].icon;
@@ -42,7 +49,7 @@ function App() {
       // the card to decide what to display
     }
   };
-  console.log(weatherData);
+
   return (
     <div className="mw5 mw7-ns center bg-light-gray pa3 ph5-ns ">
       <div className="center">

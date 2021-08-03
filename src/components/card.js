@@ -21,7 +21,12 @@ const Card = (props) => {
               <h1 className="f5 f4-ns mv0 bg-light-gray br4">{arr[1]}</h1>
             </div>
           </div>
-          <p className="  f6 lh-copy measure mt2 ">{arr[0]} degrees</p>
+          <p className="  f6 lh-copy measure mt2 ">
+            {Math.round(arr[0])} degrees
+          </p>
+          <p className="  f6 lh-copy measure mt2 ">
+            {arr[3][0].toUpperCase() + arr[3].slice(1)}
+          </p>
         </div>
       </div>
     </div>

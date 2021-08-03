@@ -1,10 +1,11 @@
 import "./App.css";
 import "tachyons";
+
 import myKey from "./config.js";
 import request from "request";
 import { useState } from "react";
 import Top from "./top/top.js";
-import Sidebar from "./components/sidebar.js";
+import UserInput from "./components/sidebar.js";
 import Card from "./components/card.js";
 function App() {
   const [weatherData, setWeatherState] = useState("no weather to display");
@@ -19,34 +20,32 @@ function App() {
         myKey;
 
       request(url, function (error, res, body) {
-        const x = JSON.parse(body);
+        const data = JSON.parse(body);
         if (error) {
           setWeatherState("no weather to display");
           console.log(error);
         }
 
-        setWeatherState(x);
+        setWeatherState(data);
       });
     }
   };
-  ////// remake front end wit express
 
   const temperature = (props) => {
     if (
+      weatherData.cod !== 401 &&
       weatherData !== "no weather to display" &&
       weatherData !== null &&
       weatherData.message !== "city not found" &&
       weatherData.message !== "invalid zip code"
     ) {
-      console.log(weatherData);
-      console.log();
       const temp = weatherData.main.temp;
       const cityName = weatherData.name;
       const icon = weatherData.weather[0].icon;
-      return [temp, cityName, icon];
+      const desc = weatherData.weather[0].description;
+      return [temp, cityName, icon, desc];
     } else {
-      return "no weather to display"; // I can make an array here and check the length in
-      // the card to decide what to display
+      return "no weather to display";
     }
   };
 
@@ -55,7 +54,7 @@ function App() {
       <div className="center">
         <Top></Top>
       </div>
-      <Sidebar className="" data={findCity}></Sidebar>
+      <UserInput className="" data={findCity}></UserInput>
       <Card weather={temperature}></Card>
     </div>
   );

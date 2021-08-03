@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./sidebar.css";
 
-const Sidebar = (props) => {
+const UserInput = (props) => {
   const [value, setValue] = useState("");
   const zipCode = (event) => {
     setValue(event.target.value);
@@ -29,4 +29,4 @@ const Sidebar = (props) => {
   );
 };
 
-export default Sidebar;
+export default UserInput;
